@@ -32,16 +32,16 @@ const Login = () => {
     };
 
     return (
-        <div className="flex items-center justify-center h-screen bg-background">
-            <form onSubmit={handleLogin} className="bg-secondary p-6 rounded shadow-md text-text">
-                <h2 className="text-lg font-bold mb-4">Login</h2>
+        <div className="flex items-center justify-center h-screen bg-gradient-to-r from-red-900 to-gray-900">
+            <form onSubmit={handleLogin} className="bg-gray-800 p-8 rounded-lg shadow-lg text-white w-full max-w-sm">
+                <h2 className="text-2xl font-bold mb-6 text-center">Login to Your Account</h2>
                 <div className="mb-4">
                     <label className="block text-sm font-medium mb-2">Email</label>
                     <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="border border-border rounded w-full p-2 bg-secondary text-text"
+                        className="border border-gray-600 rounded w-full p-2 bg-gray-700 text-white"
                         required
                     />
                 </div>
@@ -51,13 +51,16 @@ const Login = () => {
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="border border-border rounded w-full p-2 bg-secondary text-text"
+                        className="border border-gray-600 rounded w-full p-2 bg-gray-700 text-white"
                         required
                     />
                 </div>
-                <button type="submit" className="bg-accent text-text rounded p-2 w-full hover:bg-green-600">
+                <button type="submit" className="bg-red-600 text-white rounded p-2 w-full hover:bg-red-700 transition-colors">
                     Login
                 </button>
+                <p className="mt-4 text-center text-gray-400">
+                    Don't have an account? <a href="/signup" className="text-red-400 hover:underline">Sign Up</a>
+                </p>
             </form>
         </div>
     );
